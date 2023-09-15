@@ -1,7 +1,11 @@
 function fetchBooks() {
   // To pass the tests, don't forget to return your fetch!
-  
+  return fetch(GoTUrl)
+  .then((bookList) => bookList.json())
+  .then(renderBooks);
 }
+
+const GoTUrl = "https://anapioficeandfire.com/api/books";
 
 function renderBooks(books) {
   const main = document.querySelector('main');
